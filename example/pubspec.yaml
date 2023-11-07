@@ -35,6 +35,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  phrase_flow_components:
+    git:
+      url: https://github.com/davi-oliver/phrase_flow_components
+      ref: main
 
 dev_dependencies:
   flutter_test:
