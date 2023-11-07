@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import "package:phrase_flow_components/app/main.dart" as mainApp;
 
 void main() {
-  runApp(const MyApp());
+  mainApp.main();
 }
 
 class MyApp extends StatelessWidget {

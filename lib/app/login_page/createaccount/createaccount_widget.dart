@@ -1,6 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:phrase_flow_components/app/global/theme/theme_mode.dart';
-import 'package:phrase_flow_components/app/login_page/login_functions.dart';
 
 import '../../../components/flutter_flow/flutter_flow_util.dart';
 import '../../../components/flutter_flow/flutter_flow_widgets.dart';
@@ -539,27 +538,27 @@ class _CreateaccountWidgetState extends State<CreateaccountWidget> {
                                         0.0, 10.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        var resp = await LoginFunctions(context)
-                                            .signInGoogle();
-                                        if (resp) {
-                                          context.pushNamed(
-                                              'acompanhamenttodasatividades');
-                                        } else {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              backgroundColor:
-                                                  ThemeModeApp.of(context)
-                                                      .primaryBackground,
-                                              content: Text(
-                                                  "Erro ao logar com o Google",
-                                                  style:
-                                                      ThemeModeApp.of(context)
-                                                          .bodyLarge
-                                                          .copyWith()),
-                                            ),
-                                          );
-                                        }
+                                        // var resp = await LoginFunctions(context)
+                                        //     .signInGoogle();
+                                        // if (resp) {
+                                        context.pushNamed(
+                                            'acompanhamenttodasatividades');
+                                        // } else {
+                                        //   ScaffoldMessenger.of(context)
+                                        //       .showSnackBar(
+                                        //     SnackBar(
+                                        //       backgroundColor:
+                                        //           ThemeModeApp.of(context)
+                                        //               .primaryBackground,
+                                        //       content: Text(
+                                        //           "Erro ao logar com o Google",
+                                        //           style:
+                                        //               ThemeModeApp.of(context)
+                                        //                   .bodyLarge
+                                        //                   .copyWith()),
+                                        //     ),
+                                        //   );
+                                        // }
                                       },
                                       text: 'Continue com Google',
                                       icon: FaIcon(

@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto/crypto.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:phrase_flow_components/app/global/global_functions.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginFunctions {
   BuildContext context;
@@ -30,44 +29,44 @@ class LoginFunctions {
     return true;
   }
 
-  Future<bool> signInGoogle() async {
-    final auth = FirebaseAuth.instance;
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
+  // Future<bool> signInGoogle() async {
+  //   final auth = FirebaseAuth.instance;
+  //   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-    bool resultadoConexao = await VerificaInternet().result(context);
+  //   bool resultadoConexao = await VerificaInternet().result(context);
 
-    if (resultadoConexao == false) {
-      try {
-        final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-        final GoogleSignInAuthentication googleAuth =
-            await googleUser!.authentication;
+  //   if (resultadoConexao == false) {
+  //     try {
+  //       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+  //       final GoogleSignInAuthentication googleAuth =
+  //           await googleUser!.authentication;
 
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken,
-          idToken: googleAuth.idToken,
-        );
+  //       final AuthCredential credential = GoogleAuthProvider.credential(
+  //         accessToken: googleAuth.accessToken,
+  //         idToken: googleAuth.idToken,
+  //       );
 
-        final UserCredential user = await auth.signInWithCredential(credential);
-        print("signed in " + "${user.user!.displayName}");
+  //       final UserCredential user = await auth.signInWithCredential(credential);
+  //       print("signed in " + "${user.user!.displayName}");
 
-        // final tokenResultId = await user.user!.getIdTokenResult();
+  //       // final tokenResultId = await user.user!.getIdTokenResult();
 
-        // print("TokenResultId = ${tokenResultId}");
-        // userInfos.tokenId = tokenResultId.token;
-        // log("TokenId = ${userInfos.tokenId}");
+  //       // print("TokenResultId = ${tokenResultId}");
+  //       // userInfos.tokenId = tokenResultId.token;
+  //       // log("TokenId = ${userInfos.tokenId}");
 
-        // await getDados();
-        // Loading().loadingPadrao("Aguarde");
-      } on Exception catch (e) {
-        print("ta dando ruim!!!!!!!! $e");
+  //       // await getDados();
+  //       // Loading().loadingPadrao("Aguarde");
+  //     } on Exception catch (e) {
+  //       print("ta dando ruim!!!!!!!! $e");
 
-        return false;
-      }
-    } else {
-      print("Erro ao tentar logar!");
-      return false;
-    }
+  //       return false;
+  //     }
+  //   } else {
+  //     print("Erro ao tentar logar!");
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 }
